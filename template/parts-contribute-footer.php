@@ -1,0 +1,1 @@
+<a href="<?php the_field('url'); ?>" class="fon-1 t-wh" target="_blank"><?php get_template_part('snp/maintitle'); ?></a>

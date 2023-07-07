@@ -1,0 +1,186 @@
+#whatwedo {
+  margin: 3em 0;
+  .titleWrap {
+    position: relative;
+    top: 1em;
+  }
+
+  .contentsWrap {
+    background-color: var(--main);
+    padding: 2em;
+    .triangleBottom {
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -1em;
+      .triangleInner {
+        position: absolute;
+        left: 50%;
+        bottom: 1px;
+        transform: translateX(-50%);
+        border-top: 1em solid #fff;
+        border-right: 1em solid transparent;
+        border-left: 1em solid transparent;
+      }
+      .triangleOuter {
+        position: absolute;
+        left: 50%;
+        z-index: -1;
+        bottom: -6px;
+        transform: translateX(-50%);
+        border-top: calc(1em + 5px) solid #000;
+        border-right: calc(1em + 5px) solid transparent;
+        border-left: calc(1em + 5px) solid transparent;
+      }
+    }
+    .triangleRight {
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+      .triangleInner {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        z-index: 1;
+        transform: translateY(-50%);
+        border-top: 1em solid transparent;
+        border-bottom: 1em solid transparent;
+        border-left: 1em solid #fff;
+      }
+      .triangleOuter {
+        position: absolute;
+        top: 50%;
+        left: calc(100% + 2px);
+        z-index: -1;
+        transform: translateY(-50%);
+        border-top: calc(1em + 5px) solid transparent;
+        border-bottom: calc(1em + 5px) solid transparent;
+        border-left: calc(1em + 5px) solid #000;
+      }
+    }
+    > .inner {
+      > p {
+        font-size: 0.6em;
+        font-weight: 900;
+        margin-bottom: 1.5em;
+      }
+    }
+    .content {
+      border: 5px solid #000;
+      background-color: #fff;
+      position: relative;
+      height: 100%;
+      .title {
+        position: absolute;
+        top: 0.5em;
+        left: -3em;
+        z-index: 100;
+        @media screen and (max-width: 767px) {
+          left: -2em;
+        }
+        h2 {
+          background-color: #000;
+          color: #fff;
+          line-height: 1;
+          font-size: 0.7em;
+          padding: 0.5em;
+        }
+      }
+      .inner {
+        padding: 1.5em 1.5em 1em;
+        font-size: 70%;
+        img {
+          width: 5em;
+          margin-bottom: 1em;
+          @media screen and (max-width: 767px) {
+            width: 6em;
+          }
+        }
+        p {
+          font-size: 0.6em;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+      .hushtag {
+        position: absolute;
+        bottom: 1em;
+        left: 97%;
+        font-size: 80%;
+        line-height: 0;
+        z-index: 100;
+        @media screen and (max-width: 767px) {
+          bottom: -1em;
+          left: 70%;
+        }
+        p {
+          padding: 0.5em;
+          font-size: 0.6em;
+          font-weight: bold;
+          background-color: #000;
+          color: #fff;
+          line-height: 1;
+          display: inline-block;
+          white-space: nowrap;
+        }
+      }
+    }
+    .strategy {
+      width: 70%;
+      margin: 0 auto;
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    .flowWrap {
+      margin-top: 2em;
+      > .contentWrap {
+        width: calc((100% / 3));
+        @media screen and (max-width: 767px) {
+          width: 100%;
+          margin-bottom: 2em;
+        }
+        .content {
+          width: 80%;
+          font-size: 70%;
+          @media screen and (max-width: 767px) {
+            width: 100%;
+            font-size: 100%;
+          }
+          .inner {
+            padding: 2.5em 1.5em 1em;
+          }
+          img {
+            width: 4em;
+            @media screen and (max-width: 767px) {
+              width: 6em;
+            }
+          }
+          p {
+            font-size: 0.6em;
+          }
+          .title {
+            top: 0.2em;
+            left: -1em;
+            @media screen and (max-width: 767px) {
+              left: -2em;
+            }
+          }
+          .hushtag {
+            left: 90%;
+            bottom: -1em;
+            @media screen and (max-width: 767px) {
+              bottom: inherit;
+              top: 97%;
+              left: 70%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

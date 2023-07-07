@@ -1,0 +1,278 @@
+@charset "utf-8";
+
+
+$ub: "Ubuntu", sans-serif;
+$fa: "FontAwesome";
+$f-ow: 'Oswald', sans-serif;
+$f-kh: 'Khand', sans-serif;
+$prt: 'Prata', serif;
+$f-min: "ヒラギノ明朝 ProN", "HiraMinProN", "HG明朝", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+
+/*color*/
+
+$mp: #21041C;
+
+
+
+/*color*/
+
+
+.prt{
+  font-family: $prt;
+}
+.min{
+  font-family: $f-min;
+}
+html {
+  background-color: $mp;
+}
+
+body{
+  overflow-x: hidden;
+  background-color: $mp;
+  font-size: 100%;
+  // 600px以降から、100pxごとに1px大きくなる
+  @media (min-width: 600px) {
+    font-size: calc(112.5% + 4 * (100vw - 600px) / 400)
+  }
+  // 1,000px以上は、22pxに
+  @media (min-width: 1000px) {
+    font-size: calc(137.5%)
+  }
+}
+.lato{
+  font-family: 'Lato', sans-serif;
+}
+.jose{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.bgwh{
+  background-color: #fff;
+}
+
+section{
+  position: relative;
+  z-index: 1;
+}
+
+.button{
+  &.border{
+    a{
+    border: 2px solid #fff;
+    }
+  }
+}
+.wide_wrap{
+  padding: 2rem 0;
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+}
+.mid_wrap{
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.low_wrap{
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.narrow_wrap{
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.top2cal_wrap{
+
+  margin: 0 auto;
+}
+
+
+
+.remodal {
+  background: none;
+  max-width: initial!important;
+  @media screen and (max-width: 768px) {
+    padding: 20px 0;
+  }
+  .article-contents{
+    background: none;
+    padding: initial;
+  }
+  .remodal_inner{
+    padding: 3rem;
+    background-color: #fff;
+    margin: 0 auto 3rem;
+  }
+  .close{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    color: #fff;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    &:hover{
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
+  .back{
+    cursor: pointer;
+  }
+}
+
+.remodal-wrapper {
+  padding: 2rem;
+  @media screen and (max-width: 768px) {
+    padding: .5rem;
+  }
+}
+.slide-text{
+  padding-left: 1rem;
+  ul{
+    li{
+      position: relative;
+      line-height: 2.5;
+      &:before{
+        content: "・";
+        position: absolute;
+        text-indent: -1rem;
+      }
+    }
+  }
+}
+
+
+
+.button{
+  &.tab{
+    p,a{
+      font-size: .8rem;
+      font-weight: bold;
+      border-radius: 10px;
+      padding: .8rem 0;
+      margin: 0 1rem;
+      width: 250px;
+    }
+    p{
+      color: #fff;
+
+    }
+    a{
+
+
+      &:hover{
+
+        color: #fff;
+      }
+    }
+  }
+}
+/*  ----------------------------------------------------------------------------------------------*/
+
+.kv-bg{
+  position: relative;
+  z-index: -1;
+}
+.kv-bg:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(../images/kv.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.kv-bg:after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.top2cal_left{
+  width: 20%;
+}
+.top2cal_right{
+  width: 80%;
+}
+
+
+#whoweare{
+  .top2cal_right{
+    margin: 13rem 0;
+  }
+}
+
+
+.sec_title{
+  font-size: 8rem;
+  &.vertical{
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+.sec_subtitle{
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+#produce{
+  .top2cal{
+    &.right{
+      &.top{
+        margin-bottom: 9rem;
+      }
+    }
+  }
+}
+
+.consul{
+  .works_inner.right{
+    background-image: url(../images/01.png);
+  }
+}
+.product{
+  .works_inner.right{
+    background-image: url(../images/02.png);
+  }
+}
+
+.works_inner{
+  margin-bottom: 2rem;
+  &.left{
+    padding-right: 2rem;
+  }
+}
+
+.recruit_inner{
+  height: 19vw;
+  border: 4px solid #fff;
+  .recruit_inner_left,
+  .recruit_inner_right{
+    max-width: 200px;
+  }
+}
+.recruit_title{
+  margin: 0 auto;
+}

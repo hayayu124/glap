@@ -1,0 +1,19 @@
+.partsButton {
+  display: inline-block;
+  &.black {
+    a {
+      display: block;
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+      padding: 0.8em 2em;
+      line-height: 1;
+      font-size: 0.8em;
+    }
+  }
+  &.shadow {
+    a {
+      box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.6);
+    }
+  }
+}
