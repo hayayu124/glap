@@ -117,7 +117,11 @@ get_header(); ?>
           <div class="formWrap meum_lg">
             <h1>株式会社GLAPentertainment<br>応募フォーム</h1>
             <div id="forms" class="slide-text fon-s80-pc">
-              <?php the_field('form'); ?>
+
+
+              <?php remove_filter('acf_the_content', 'wpautop');
+              the_field('form'); ?>
+
             </div>
           </div>
         </div>
@@ -125,6 +129,8 @@ get_header(); ?>
 
     </div>
 
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js">
+    </script>
     <script>
       // 表示したいPDFのパスを指定
       // https棟のURLでも可。ただしPDF配置サーバにCORSの設定をする必要あり。base64 encodeのPDFでも表示可能

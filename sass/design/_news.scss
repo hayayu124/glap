@@ -1,0 +1,141 @@
+.article {
+  &.news {
+    width: 100%;
+    .text_wrap {
+      padding-left: 1.5em;
+      width: 70%;
+      @media screen and (max-width: 767px) {
+        padding-left: 1em;
+      }
+    }
+    .image_wrap {
+      width: 40%;
+      @media screen and (max-width: 767px) {
+        width: 30%;
+      }
+      .bgimg {
+        padding: 52.25% 0 0 0;
+      }
+    }
+  }
+}
+.news_contents_date {
+  padding-right: 0.5em;
+  @media screen and (max-width: 768px) {
+    min-width: 105px;
+  }
+  .date {
+  }
+}
+.catname {
+  line-height: 0;
+  p {
+    margin-left: 1em;
+    display: inline-block;
+    padding: 0.1em 1em 0.2em 1em;
+    line-height: 1.2;
+    border: 1px solid #000;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+.wp-block-image {
+  a {
+    width: 100%;
+  }
+}
+.news_contents_text {
+  // border-left: 1px solid #707070;
+  .titleWrap {
+    margin-bottom: 0.3em;
+  }
+  h1 {
+  }
+  h2 {
+    margin-top: 0.5em;
+    font-family: inherit;
+    overflow: hidden;
+    display: -webkit-box; // webkitの機能を使うようにする
+    -webkit-box-orient: vertical; // 縦に折り返す
+    -webkit-line-clamp: 2; // 3行まで表示する
+  }
+  .exc {
+    overflow: hidden;
+    display: -webkit-box; // webkitの機能を使うようにする
+    -webkit-box-orient: vertical; // 縦に折り返す
+    -webkit-line-clamp: 2; // 3行まで表示する
+    margin-bottom: 0.6em;
+  }
+  p {
+    font-size: 0.6em;
+    overflow: hidden;
+    display: -webkit-box; // webkitの機能を使うようにする
+    -webkit-box-orient: vertical; // 縦に折り返す
+    -webkit-line-clamp: 2; // 3行まで表示する
+    b {
+      font-weight: normal;
+    }
+  }
+}
+
+#page_news {
+  .contents_wrap {
+    margin: 2em 0;
+    @media screen and (max-width: 767px) {
+      margin: 0 0 2em;
+    }
+  }
+  .contents_left_wrap {
+    .inner {
+    }
+  }
+  .contents_right_wrap {
+    margin-left: 2em;
+    @media screen and (max-width: 767px) {
+      margin-left: 0;
+    }
+  }
+  .article {
+    margin-bottom: 2em;
+  }
+  .pagination {
+    margin: 2em 0 0;
+    @media screen and (max-width: 767px) {
+      margin: 1em 0 0;
+    }
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+  }
+  .pagination .page-numbers {
+    font-size: 0.8em;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0.7em 1em;
+    border: 0.1em solid #000;
+    color: #333;
+    border-radius: 3px;
+    line-height: 1;
+    img {
+      height: 1em;
+      width: auto;
+    }
+  }
+  .pagination .current {
+    background: #000;
+    color: #fff;
+  }
+  .pagination .prev,
+  .pagination .next {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    color: #69a4db;
+  }
+  .pagination .dots {
+    background: transparent;
+    box-shadow: none;
+  }
+}

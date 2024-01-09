@@ -15,6 +15,7 @@
 
       <section id="kv" class="kv full_wrap">
         <div class="inner pos-r">
+
           <div class="kv_wrap full pos-r">
             <div class="inner neum_y">
               <div id="light" class="wrapper pos-a-area site-branding">
@@ -32,7 +33,7 @@
               </div>
               <div class="glap_copy">
                 <img class="" src="<?php echo get_template_directory_uri(); ?>/images/glap_copy.svg" alt="">
-                <p class="fon-2 fon-b mar-t1 mar-l05 f-ms">GLAPentertainment Inc.</p>
+
               </div>
 
               <img class="glap_logo" src="<?php echo get_template_directory_uri(); ?>/images/glap_logo.svg" alt="">
@@ -43,6 +44,7 @@
 
             </div>
           </div>
+
 
           <div class="philosophy">
             <div class="inner mid_wrap tb-pad2">
@@ -85,14 +87,35 @@
           <div class="news_contents_wrap int">
             <div class="inner fle-b fle-w">
 
-              <?php if (wp_is_mobile()) {
-                include('feed-sp.php');
+              <?php
+              if (wp_is_mobile()) {
+                $number = 2;
               } else {
-                include('feed.php');
-              } ?>
+                $number = 3;
+              };
+
+              $args = array(
+                'posts_per_page' => $number,
+                'post_status' => 'publish',
+                'post_type' => 'post',
+                // 'category_name' => $cat_name,
+                'order' => 'DESC',
+
+              );
+              $lastposts = get_posts($args);
+              foreach ($lastposts as $post) :
+                setup_postdata($post);
+                $thumbnail_id = get_post_thumbnail_id();
+                $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'large');
+              ?>
+
+                <?php include('template/parts-news.php'); ?>
+
+              <?php endforeach;
+              wp_reset_postdata(); ?>
 
             </div>
-            <div class="link tex-r"><a class="fon-1-pc fon-3-sp fon-b dis-ib" href="https://note.com/glap/" target="_blank">more→</a></div>
+            <div class="link tex-r"><a class="fon-1-pc fon-3-sp fon-b dis-ib" href="<?php echo home_url(); ?>/archives-news">more→</a></div>
           </div><!-- news wrap end -->
 
         </div>
@@ -207,7 +230,7 @@
         </div>
       </section>
 
-      <section id="column" class="column int">
+      <!-- <section id="column" class="column int">
         <div class="inner right_center_wrap">
 
           <div class="cont_head wrap">
@@ -231,7 +254,7 @@
           </div>
           <div class="link tex-r"><a class="fon-1-pc fon-3-sp fon-b dis-ib" href="https://www.wantedly.com/companies/company_6451379/feed" target="_blank">more→</a></div>
         </div>
-      </section>
+      </section> -->
 
       <section id="top_works" class="top_works full_wrap bg_lg header-on">
         <div class="mid_wrap">

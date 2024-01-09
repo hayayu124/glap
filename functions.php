@@ -61,27 +61,47 @@ function catch_that_image()
 /* CSSの読み込み
 ---------------------------------------------------------- */
 // JS・CSSファイルを読み込む
+
+// function add_async_defer_script($url)
+// {
+// 	if (strpos($url, '#async'))
+// 		return str_replace('#async', '', $url) . "' async='async";
+// 	else if (strpos($url, '#defer'))
+// 		return str_replace('#defer', '', $url) . "' defer='defer";
+// 	else
+// 		return $url;
+// }
+// add_filter('clean_url', 'add_async_defer_script', 11, 1);
+
 function add_files()
 {
 	wp_deregister_script('jquery');
 	// UNIX TIMESTAMP
 	$timestamp = time();
-	// wp_enqueue_script('barba', 'https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js', "", '20171222');
-	wp_enqueue_script('shuffles', get_template_directory_uri() . '/js/shuffle.min.js', "", '20181222');
-	wp_enqueue_script('remodal', get_template_directory_uri() . '/js/remodal.min.js', "", '20171222');
-	// wp_enqueue_script('barba-custom', get_template_directory_uri() . '/js/barba-custom.js', "", '20171222');
-	wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper.min.js', "", '20171222');
-	wp_enqueue_script('webanimation', get_template_directory_uri() . '/js/webanimation.js', "", '20181222');
-	wp_enqueue_script('muuri', get_template_directory_uri() . '/js/muuri.js', "", '20181222');
-	wp_enqueue_script('commons', get_template_directory_uri() . '/js/common.js', "", '20181222');
-	wp_enqueue_style('remodal', get_template_directory_uri() . '/stylesheets/remodal.css', "", '20190429');
+	// 	wp_enqueue_script('shuffles', get_template_directory_uri() . '/js/shuffle.min.js#defer', "", '20181222');
+	wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-3.7.0.min.js#defer', "", '');
+	wp_enqueue_script('commons', get_template_directory_uri() . '/js/commons.js#defer', "", '');
+	wp_enqueue_script('remodal', get_template_directory_uri() . '/js/remodal.min.js#defer', "", '20171222');
+	// 	wp_enqueue_script('swiper', get_template_directory_uri() . '/js/swiper.min.js#defer', "", '20171222');
+	// 	wp_enqueue_script('webanimation', get_template_directory_uri() . '/js/webanimation.js#defer', "", '20181222');
+	// 	wp_enqueue_script('muuri', get_template_directory_uri() . '/js/muuri.js#defer', "", '20181222');
 
+
+	wp_enqueue_style('remodal', get_template_directory_uri() . '/stylesheets/remodal.css', "", '20190429');
 	wp_enqueue_style('remodal_theme', get_template_directory_uri() . '/stylesheets/remodal-default-theme.css', "", '20190429');
-	wp_enqueue_style('base', get_template_directory_uri() . '/stylesheets/base.css', "", '20190429');
+	wp_enqueue_style('base', get_template_directory_uri() . '/stylesheets/base.css', "", $timestamp);
 	wp_enqueue_style('style', get_template_directory_uri() . '/stylesheets/style.css', "", $timestamp);
-	wp_enqueue_style('swiper', get_template_directory_uri() . '/cssmin/swiper.min.css', "", $timestamp);
+	// 	wp_enqueue_style('swiper', get_template_directory_uri() . '/cssmin/swiper.min.css', "", $timestamp);
 }
 add_action('wp_enqueue_scripts', 'add_files');
+
+
+
+// add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+// function wpcf7_autop_return_false()
+// {
+// 	return false;
+// }
 
 
 
@@ -234,7 +254,7 @@ function post_has_archive($args, $post_type)
 {
 	if ('post' == $post_type) {
 		$args['rewrite'] = true;
-		$args['has_archive'] = 'post-all'; // ページ名（任意に変更可能）
+		$args['has_archive'] = 'archives-news'; // ページ名（任意に変更可能）
 	}
 	return $args;
 }
@@ -412,4 +432,13 @@ function page_content_e($page_path, $post_type = 'page')
 	if ($page && $page->post_status == 'publish') {
 		echo apply_filters('the_content', $page->post_content);
 	}
+}
+
+
+
+function console_log($data)
+{
+	echo '<script>';
+	echo 'console.log(' . json_encode($data) . ')';
+	echo '</script>';
 }

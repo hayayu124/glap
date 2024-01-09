@@ -40,7 +40,7 @@ function css() {
 
 // Watch files
 function watchFiles() {
-  gulp.watch("./sass/**", css);
+  gulp.watch("./sass/**/*", css);
   gulp.watch("./**/*.php", browserSyncReload);
   gulp.watch("./js/*", browserSyncReload);
 }

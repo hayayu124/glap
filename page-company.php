@@ -159,8 +159,8 @@ get_header(); ?>
                   </div>
                   <div class="text_wrap flex fon-1">
                     <div class="text_head fle-1">所在地</div>
-                    <div class="text_contents fle-4">〒150-0043 東京都渋谷区道玄坂一丁目15番3号 プリメーラ道玄坂309<br>
-                      （登記：〒102-0074 東京都千代田区九段南１丁目５−６　りそな九段ビル）
+                    <div class="text_contents fle-4">〒150-0002 東京都渋谷区渋谷3-26-16　第五叶ビル 7階<br>
+                      （登記：〒102-0074 東京都千代田区九段南１丁目５−６　りそな九段ビル5F）
                     </div>
                   </div>
                   <div class="text_wrap flex fon-1">
@@ -195,7 +195,7 @@ get_header(); ?>
               <div class="img_map bgimg inner pos-r">
                 <div class="over pos-a-area">
                   <div class="tra-c">
-                    <div class="button"><a href="https://goo.gl/maps/PYahaVNKBvj739D76" target="_blank">map</a></div>
+                    <div class="button"><a href="https://goo.gl/maps/9ppZ8dGxUhPegXgo9" target="_blank">map</a></div>
                   </div>
                 </div>
               </div>

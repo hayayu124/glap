@@ -7,6 +7,9 @@
 @use "design/company";
 @use "design/recruit";
 @use "design/talent";
+@use "design/news";
+@use "design/news-single";
+@use "design/works";
 
 $f-min: "ヒラギノ明朝 ProN", "HiraMinProN", "HG明朝", "ＭＳ Ｐ明朝",
   "MS PMincho", "MS 明朝", serif;
@@ -141,7 +144,7 @@ section {
 
 .button a,
 .button input {
-  padding: 0.3em 3em;
+  padding: 0.3em 3em 0.4em;
   background-color: $yl;
   border-radius: 50px;
   border: 0.17em solid #000;
@@ -152,6 +155,27 @@ section {
     padding: 0.5em 3em;
     font-size: 1em;
     min-width: 110px;
+  }
+}
+
+.button {
+  &.rectangle {
+    a {
+      background: rgba(0, 0, 0, 0);
+      display: inline-block;
+      border-radius: 0;
+      padding: 1.4em 3em 1.5em;
+      border: 0.15em solid #000;
+      font-size: 0.6em;
+      font-weight: bold;
+      color: #000;
+      transition: backgronud 1s 1s ease;
+      &:hover {
+        background: rgba(0, 0, 0, 1);
+        color: #fff;
+        transition: backgronud 1s 1s ease;
+      }
+    }
   }
 }
 .overray p {
@@ -350,20 +374,24 @@ header {
     line-height: 1;
     @media screen and (max-width: 768px) {
       margin: 0 auto;
-    }
-    img {
-      width: 1.7em;
-      vertical-align: middle;
-      margin-right: 0.5em;
-    }
-    h1 {
-      vertical-align: middle;
+      padding: 0.2em 0 0.3em 0;
     }
   }
-  a {
-    display: inline-block;
+  img {
+    width: 8em;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    @media screen and (max-width: 768px) {
+      width: 12em;
+    }
+  }
+  h1 {
     vertical-align: middle;
   }
+}
+a {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #page_header {
@@ -509,28 +537,6 @@ header {
 }
 
 .article {
-  &.works {
-    width: calc(50% - 1em);
-    margin: 0.2em;
-    margin-bottom: 2em;
-    @media screen and (max-width: 768px) {
-      width: calc(50% - 0.5em);
-      margin-bottom: 1em;
-    }
-    > .inner {
-      padding: 0.4em;
-      height: 100%;
-    }
-    .image_wrap {
-      border: 0.2em solid $gy;
-    }
-    .text_wrap {
-      padding: 0.5em 0.5em 1em;
-      .title {
-        min-height: 1.928em;
-      }
-    }
-  }
   &.product {
     width: calc(33.3333% - 1em);
     margin: 1em;
@@ -639,56 +645,6 @@ header {
     border-bottom: 0.15em solid #000;
   }
 }
-.article {
-  &.news {
-  }
-}
-.news_contents_date {
-  padding-right: 0.5em;
-  @media screen and (max-width: 768px) {
-    min-width: 105px;
-  }
-  .date {
-  }
-}
-.catname {
-  line-height: 0;
-  p {
-    display: inline-block;
-    background-color: #35d483;
-    padding: 0.1em 1em 0;
-  }
-}
-.news_contents_text {
-  padding-left: 0.5em;
-  border-left: 1px solid #707070;
-  .titleWrap {
-    margin-bottom: 0.3em;
-  }
-  h2 {
-    font-family: inherit;
-    overflow: hidden;
-    display: -webkit-box; // webkitの機能を使うようにする
-    -webkit-box-orient: vertical; // 縦に折り返す
-    -webkit-line-clamp: 2; // 3行まで表示する
-  }
-  .exc {
-    overflow: hidden;
-    display: -webkit-box; // webkitの機能を使うようにする
-    -webkit-box-orient: vertical; // 縦に折り返す
-    -webkit-line-clamp: 2; // 3行まで表示する
-  }
-  p {
-    font-size: 0.6em;
-    overflow: hidden;
-    display: -webkit-box; // webkitの機能を使うようにする
-    -webkit-box-orient: vertical; // 縦に折り返す
-    -webkit-line-clamp: 2; // 3行まで表示する
-    b {
-      font-weight: normal;
-    }
-  }
-}
 
 footer {
   background-color: $bk;
@@ -776,34 +732,15 @@ body.post-type-archive-products {
 
 body.single {
   header {
-    background-color: $lg;
+    // background-color: $lg;
   }
 }
 
 .archive.article {
   padding: 3em 1em 2em;
-}
-
-.article.single {
-  .img_con {
-    padding: 0.5em;
-    .bgimg {
-      position: relative;
-      padding-top: 46%;
-      border: 0.2em solid $gy;
-      @media screen and (max-width: 768px) {
-        padding-top: 100%;
-      }
-      &:before {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, 0.2);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
+  &.news {
+    @media screen and (max-width: 767px) {
+      padding: 3em 0 2em;
     }
   }
 }
@@ -966,7 +903,8 @@ article {
       background-color: #4267b2;
     }
     &.twitter {
-      background-color: #1da1f2;
+      background-color: #000;
+      padding: 0.2em;
     }
     i {
       font-size: 0.7em;
@@ -1309,28 +1247,6 @@ article {
   }
 }
 
-#page_news {
-  .contents_wrap {
-    margin: 2em 0;
-    // @media screen and (max-width: 767px) {
-    //   padding: 2em 0 2em;
-    // }
-  }
-  .contents_left_wrap {
-    .inner {
-    }
-  }
-  .contents_right_wrap {
-    margin-left: 2em;
-    @media screen and (max-width: 767px) {
-      margin-left: 0;
-    }
-  }
-  .article {
-    margin-bottom: 2em;
-  }
-}
-
 /*  ----------------------------------------------------------------------------------------------*/
 
 // body.post-type-archive-works {
@@ -1339,66 +1255,6 @@ article {
 //   }
 // }
 
-#page_header {
-  &.works {
-    background-color: $lg;
-  }
-}
-
-#page_works {
-  > .inner {
-    align-items: stretch;
-    margin-bottom: 2em;
-  }
-  .contents_wrap {
-    padding: 2em 0 4em;
-    @media screen and (max-width: 768px) {
-      padding: 0 0 2em;
-    }
-  }
-  li {
-    display: inline-block;
-    font-size: 0.8em;
-    line-height: 0.8;
-    padding: 0.4em 1em;
-    font-weight: bold;
-    &.active {
-      background-color: $gy;
-      border-radius: 50px;
-    }
-  }
-  #catmenu {
-    position: sticky;
-    top: 0;
-  }
-  .article.works {
-    width: calc(33.2% - 1.25em);
-    margin: 1em !important;
-    @media screen and (max-width: 768px) {
-      width: calc(49.99% - 1em);
-      margin: 0.5em;
-    }
-  }
-}
-.my-sizer-element {
-  height: 1px;
-}
-
-.tax_name_wrap {
-  span {
-    font-size: 0.8em;
-    font-weight: bold;
-    padding: 0.3em 0.5em 0.1em 0;
-    line-height: 1;
-    margin-right: 0.5em;
-  }
-  &.works {
-    span {
-      padding: 0.3em 0.5em 0.1em;
-      background-color: $yl;
-    }
-  }
-}
 /*  ----------------------------------------------------------------------------------------------*/
 
 body.page-privacypolicy {
@@ -1760,4 +1616,12 @@ ul.move {
     border-right: 1em solid transparent;
     border-left: 1em solid transparent;
   }
+}
+
+.toc_white {
+  background-color: #000 !important;
+}
+
+#toc_container {
+  background-color: #000;
 }

@@ -1,5 +1,7 @@
 <?php
 /* Template Name: contact */
+$get_page_id = get_page_by_path("privacypolicy");
+$ppId = $get_page_id->ID;
 get_header(); ?>
 
 <div id="barba-wrapper">
@@ -39,9 +41,11 @@ get_header(); ?>
           <div class="contents_right_wrap contents_wrap fle-3">
             <div class="inner meum_g">
 
-              <form id="forms" class="slide-text fon-s80-pc">
 
-                <span class="fon-b">貴社名</span>
+
+              <div id="forms" class="slide-text fon-s80-pc">
+                <?php the_content(); ?>
+                <!-- <span class="fon-b">貴社名</span>
                 <div class="input_area">
                   <input type="text" class="textform feed2" name="entry.1953632372" rows="1" placeholder="株式会社GLAPentertainment">
                 </div>
@@ -78,11 +82,11 @@ get_header(); ?>
                 </div>
                 <div class="tex-c">
                   <div id="next" class="pos-r">
-                    <!-- <div class="overray pos-a-area">必須項目を入力してください</div> -->
+                 
                     <button id="submit" class="lb_b" type="submit">Submit</button>
                   </div>
-                </div>
-              </form>
+                </div> -->
+              </div>
 
               <script type="text/javascript">
                 function postToGoogle() {
@@ -154,3 +158,25 @@ get_header(); ?>
     </div>
 
     <?php get_footer(); ?>
+
+    <script>
+      // 表示したいPDFのパスを指定
+      // https棟のURLでも可。ただしPDF配置サーバにCORSの設定をする必要あり。base64 encodeのPDFでも表示可能
+
+      var url = '<?php the_field('company_info'); ?>';
+
+      $(function() {
+        $.ajax({
+          type: 'GET',
+          url: '<?php echo home_url(); ?>/wp-json/wp/v2/pages/<?php echo $ppId ?>',
+          dataType: 'json'
+        }).done(function(json) {
+          var content = '';
+          var content = json.content.rendered;
+          // console.log(json.content.rendered);
+          $('#ppText').append(content);
+        }).fail(function(json) {
+          console.error('記事取得に失敗しました。')
+        });
+      });
+    </script>

@@ -33,13 +33,13 @@ get_header(); ?>
               <h1 class="dis-ib ver-m fon-4 f-wk mar-b05">Category</h1>
               <div class="category link">
                 <ul id="sort" class="fon-s80-pc">
-                  <li data-group="all" class="active all">All</li>
+                  <li class="active all"><a href="<?php echo get_post_type_archive_link('works-category'); ?>">ALL</a></li>
                   <?php
-                  $terms = get_terms('works_taxonomy');
-                  foreach ( $terms as $term ) {
-                    echo '<li data-group="' . $term->name . '" style="border-color:' . $term->term_description
-											. ';">' . $term->name . '</li> ';
-                  }?>
+                  $terms = get_terms('works-category');
+                  foreach ($terms as $term) {
+                    echo '<li style="border-color:' . $term->term_description
+                      . ';">' . '<a href="' . get_term_link($term) . '">' . $term->name  . '</a></li> ';
+                  } ?>
                 </ul>
               </div>
             </div>
@@ -51,23 +51,23 @@ get_header(); ?>
             <div id="itemList" class="inner fon-s80-pc pos-r fle-w grid wid100">
 
               <?php
-              
-							$args = array(
-								'posts_per_page' => 30,
-                'post_status'    => 'publish',
-								'post_type'        => 'works',
-							);
-							$lastposts = get_posts($args);
-							foreach ($lastposts as $post) :
-								setup_postdata($post);
-								$thumbnail_id = get_post_thumbnail_id();
-								$thumbnail = wp_get_attachment_image_src($thumbnail_id, 'large');
-								?>
 
-              <?php include('template/parts-works.php'); ?>
+              $args = array(
+                'posts_per_page' => 30,
+                'post_status'    => 'publish',
+                'post_type'        => 'works',
+              );
+              $lastposts = get_posts($args);
+              foreach ($lastposts as $post) :
+                setup_postdata($post);
+                $thumbnail_id = get_post_thumbnail_id();
+                $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'large');
+              ?>
+
+                <?php include('template/parts-works.php'); ?>
 
               <?php endforeach;
-            wp_reset_postdata(); ?>
+              wp_reset_postdata(); ?>
               <div class="my-sizer-element"></div>
             </div><!-- contents_wrap end -->
           </div>

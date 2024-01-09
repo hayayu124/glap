@@ -14,16 +14,16 @@
           <?php get_template_part('snp/tarm_works_name'); ?>
         </div><!-- date end -->
 
-        <?php if(get_field('clientname')): ?>
-        <div class="cat fon-b mar-b05 fon-1">
-          <?php the_field('clientname'); ?>
-        </div>
-        <?php endif; ?>
-
         <div class="atc title mar-b02 dis-b">
           <h2 class="fon-4-pc fon-3-sp">
             <?php get_template_part('snp/maintitle'); ?>
           </h2>
+          <?php if (get_field('clientname')) : ?>
+            <div class="cat fon-b mar-b05 fon-1">
+              <?php the_field('clientname'); ?>
+            </div>
+          <?php endif; ?>
+
         </div>
 
       </div>

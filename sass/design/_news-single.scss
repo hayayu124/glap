@@ -1,0 +1,33 @@
+.article {
+  &.single {
+    .date {
+      text-align: right;
+    }
+    .img_con {
+      padding: 0;
+    }
+
+    #ez-toc-container {
+      background: none;
+      display: block;
+      margin: 2em 0;
+      padding: 1em;
+      .ez-toc-title-container {
+        text-align: center;
+        font-size: 0.7em;
+        font-weight: bold;
+        margin-bottom: 1em;
+      }
+      a.ez-toc-toggle {
+        display: none;
+      }
+      a {
+        font-weight: bold;
+        color: #000;
+        @media screen and (max-width: 767px) {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}

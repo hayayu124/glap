@@ -2,25 +2,19 @@
 <html lang="ja">
 
 <head>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-N7WMLW3');
-  </script>
-  <!-- End Google Tag Manager -->
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSXZQJLY2Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-CSXZQJLY2Z');
+  </script>
   <?php if (is_singular()) { ?>
 
     <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
@@ -31,30 +25,16 @@
 
       <meta http-equiv="content-language" content="ja">
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-      <!-- <meta name=”robots” content=”noindex”> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
       <?php include('template/mytheme-head.php'); ?>
-
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="//mozilla.github.io/pdf.js/build/pdf.js">
-      </script>
 
       <?php wp_head(); ?>
 
 
-      <!-- Googlefont -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
       </head>
 
     <body <?php body_class('style01', 'style02'); ?>>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7WMLW3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
 
       <?php if (is_home() || is_front_page()) : ?>
         <header id="header_top" class="pos-f header-in">
@@ -71,7 +51,7 @@
                   <a class="" href="<?php echo home_url(); ?>">TOP</a>
                 </li>
                 <li>
-                  <a class="" href="<?php echo home_url(); ?>/news">News</a>
+                  <a class="" href="<?php echo home_url(); ?>/archives-news">News</a>
                 </li>
                 <li>
                   <span>Service</span>
@@ -107,13 +87,13 @@
             </div>
             <div class=" header_logo">
               <a class="dis-b" href="<?php echo home_url(); ?>">
-                <img class="dis-ib" src="<?php echo get_template_directory_uri(); ?>/images/glap_logo.svg" alt="">
-                <h1 class="fon-1 dis-ib">GLAPentertainment Inc.</h1>
+                <img class="dis-ib" src="<?php echo get_template_directory_uri(); ?>/images/glap_logo_sidebyside.svg" alt="">
+                <!--<h1 class="fon-1 dis-ib">GLAPentertainment Inc.</h1>-->
               </a>
             </div>
 
             <div class="menu_wrap pc">
-              <a class="fon-1 fon-b mar-l1 news" href="<?php echo home_url(); ?>/news">News</a>
+              <a class="fon-1 fon-b mar-l1 news" href="<?php echo home_url(); ?>/archives-news">News</a>
               <div class="fon-1 fon-b mar-l1 service hover dis-ib pos-r">
                 <span>Service</span>
                 <div class="hoverMenu">

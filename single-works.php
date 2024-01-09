@@ -30,21 +30,21 @@ $cat_slug = $cat->slug;
                 <?php get_template_part('snp/tarm_works_name'); ?>
               </div><!-- date end -->
 
-              <?php if(get_field('clientname')): ?>
-              <div class="con_b fon-b mar-b05 fon-1 dis-ib">
-                <?php the_field('clientname'); ?>
-              </div>
+              <?php if (get_field('clientname')) : ?>
+                <div class="con_b fon-b mar-b05 fon-1 dis-ib">
+                  <?php the_field('clientname'); ?>
+                </div>
               <?php endif; ?>
 
-              <h1 class="title fon-6 mar-b1 fon-b">
+              <h1 class="title fon-5 mar-b1 fon-b">
                 <?php
-											if (mb_strlen($post->post_title, 'UTF-8') > 50) {
-												$title = mb_substr($post->post_title, 0, 50, 'UTF-8');
-												echo $title . '…';
-											} else {
-												echo $post->post_title;
-											}
-											?>
+                if (mb_strlen($post->post_title, 'UTF-8') > 50) {
+                  $title = mb_substr($post->post_title, 0, 50, 'UTF-8');
+                  echo $title . '…';
+                } else {
+                  echo $post->post_title;
+                }
+                ?>
               </h1><!-- title end -->
 
             </div>
@@ -67,10 +67,8 @@ $cat_slug = $cat->slug;
           <div class="share_sns wrap right_center_wrap">
             <div class="inner fon-s70">
               <span class="fon-2 f-wk dis-ib ver-m mar-r1">Share</span>
-              <a href="https://www.facebook.com/share.php?u=<?php the_permalink(); ?>"
-                class="facebook fon-6 dis-ib ver-m" target="_blank"><i class="fab fa-facebook-f tra-c"></i></a>
-              <a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>"
-                class="twitter fon-6 dis-ib ver-m" target="_blank"><i class="fab fa-twitter tra-c"></i></a>
+              <a href="https://www.facebook.com/share.php?u=<?php the_permalink(); ?>" class="facebook fon-6 dis-ib ver-m" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-facebook.svg" alt=""></a>
+              <a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>" class="twitter fon-6 dis-ib ver-m" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-x.svg" alt=""></a>
             </div>
           </div>
 
@@ -99,9 +97,9 @@ $cat_slug = $cat->slug;
               <div class="inner flex fon-s80-pc">
 
                 <?php
-                if (wp_is_mobile()){
+                if (wp_is_mobile()) {
                   $number = 2;
-                }else{
+                } else {
                   $number = 3;
                 };
                 $postID = get_the_ID();
@@ -114,15 +112,15 @@ $cat_slug = $cat->slug;
                 );
                 $lastposts = get_posts($args);
                 foreach ($lastposts as $post) :
-								setup_postdata($post);
-								$thumbnail_id = get_post_thumbnail_id();
-								$thumbnail = wp_get_attachment_image_src($thumbnail_id, 'large');
-								?>
+                  setup_postdata($post);
+                  $thumbnail_id = get_post_thumbnail_id();
+                  $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'large');
+                ?>
 
-                <?php include('template/parts-works.php'); ?>
+                  <?php include('template/parts-works.php'); ?>
 
                 <?php endforeach;
-						wp_reset_postdata(); ?>
+                wp_reset_postdata(); ?>
 
               </div>
 

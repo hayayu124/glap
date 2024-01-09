@@ -104,7 +104,9 @@
 
   <div class="rights right_center_wrap lights wrap tex-r t-wh">
     <div class="inner fon-s50">
-      <div class="lights fon-1">© 2020 GLAPentertainment Inc.</div>
+      <div class="lights fon-1">© <?php
+                                  echo date("Y");
+                                  ?> GLAPentertainment Inc.</div>
     </div>
   </div>
 </footer><!-- footer top end -->
@@ -132,28 +134,9 @@
   </div>
 </div> -->
 
-<script>
-  //swiper
-  var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        spaceBetween: 10
-      },
-      // when window width is >= 640px
-      767: {
-        slidesPerView: 4,
-        spaceBetween: 15
-      }
-    }
-  });
-</script>
+<!--       <script defer src="//mozilla.github.io/pdf.js/build/pdf.js"></script> -->
+
+
 
 <?php if (is_home() || is_front_page()) : ?>
   <script>

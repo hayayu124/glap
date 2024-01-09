@@ -44,7 +44,6 @@ textarea {
 [unselectable] {
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -149,7 +148,6 @@ table {
   [hidden~=screen] {
     display: inherit;
   }
-
   [hidden~=screen]:not(:active):not(:focus):not(:target) {
     clip: rect(0 0 0 0) !important;
     position: absolute !important;
@@ -288,8 +286,7 @@ li {
 }
 
 .wm-rl {
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
 }
 
 .td-ul {
@@ -451,7 +448,7 @@ br {
 
 @media screen and (max-width: 767px) {
   .tb-cen-sp,
-.tb-left-sp {
+  .tb-left-sp {
     left: 0;
     position: relative;
     top: 0;
@@ -1052,47 +1049,36 @@ br {
   .fon-0-sp {
     font-size: 0 !important;
   }
-
   .fon-1-sp {
     font-size: 0.618em;
   }
-
   .fon-2-sp {
     font-size: 0.764em;
   }
-
   .fon-3-sp {
     font-size: 1em;
   }
-
   .fon-4-sp {
     font-size: 1.236em;
   }
-
   .fon-5-sp {
     font-size: 1.618em;
   }
-
   .fon-6-sp {
     font-size: 2em;
   }
-
   .fon-7-sp {
     font-size: 2.618em;
   }
-
   .fon-8-sp {
     font-size: 3.236em;
   }
-
   .fon-9-sp {
     font-size: 4.236em;
   }
-
   .fon-10-sp {
     font-size: 5.236em;
   }
-
   .fon-11-sp {
     font-size: 6.854em;
   }
@@ -1101,47 +1087,36 @@ br {
   .fon-0-pc {
     font-size: 0 !important;
   }
-
   .fon-1-pc {
     font-size: 0.618em;
   }
-
   .fon-2-pc {
     font-size: 0.764em;
   }
-
   .fon-3-pc {
     font-size: 1em;
   }
-
   .fon-4-pc {
     font-size: 1.236em;
   }
-
   .fon-5-pc {
     font-size: 1.618em;
   }
-
   .fon-6-pc {
     font-size: 2em;
   }
-
   .fon-7-pc {
     font-size: 2.618em;
   }
-
   .fon-8-pc {
     font-size: 3.236em;
   }
-
   .fon-9-pc {
     font-size: 4.236em;
   }
-
   .fon-10-pc {
     font-size: 5.236em;
   }
-
   .fon-11-pc {
     font-size: 6.854em;
   }
@@ -1190,39 +1165,30 @@ br {
   .fon-s10-sp {
     font-size: 10%;
   }
-
   .fon-s20-sp {
     font-size: 20%;
   }
-
   .fon-s30-sp {
     font-size: 30%;
   }
-
   .fon-s40-sp {
     font-size: 40%;
   }
-
   .fon-s50-sp {
     font-size: 50%;
   }
-
   .fon-s60-sp {
     font-size: 60%;
   }
-
   .fon-s70-sp {
     font-size: 70%;
   }
-
   .fon-s80-sp {
     font-size: 80%;
   }
-
   .fon-s90-sp {
     font-size: 90%;
   }
-
   .fon-s100-sp {
     font-size: 100%;
   }
@@ -1231,39 +1197,30 @@ br {
   .fon-s10-pc {
     font-size: 10%;
   }
-
   .fon-s20-pc {
     font-size: 20%;
   }
-
   .fon-s30-pc {
     font-size: 30%;
   }
-
   .fon-s40-pc {
     font-size: 40%;
   }
-
   .fon-s50-pc {
     font-size: 50%;
   }
-
   .fon-s60-pc {
     font-size: 60%;
   }
-
   .fon-s70-pc {
     font-size: 70%;
   }
-
   .fon-s80-pc {
     font-size: 80%;
   }
-
   .fon-s90-pc {
     font-size: 90%;
   }
-
   .fon-s100-pc {
     font-size: 100%;
   }
@@ -1349,8 +1306,7 @@ br {
 
 /* 段組 */
 .wm-v {
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
 }
 
 .ws-n {
@@ -1437,7 +1393,7 @@ br {
 }
 
 .button.circle a {
-  background-color: #292929;
+  background-color: rgb(41, 41, 41);
   border-radius: 50%;
   font-size: 0.6em;
   min-width: initial;
@@ -1561,102 +1517,80 @@ ul.center li {
   .fle-f-sp {
     display: flex;
   }
-
   .flex-sp {
     display: flex;
   }
-
   .fle-b-sp {
     -webkit-box-pack: justify;
     display: flex;
     justify-content: space-between;
   }
-
   .fle-c-sp {
     -webkit-box-pack: center;
     display: flex;
     justify-content: center;
   }
-
   .fle-w-sp {
     display: flex;
     flex-wrap: wrap;
   }
-
   .fle-r-sp {
     -webkit-box-pack: end;
     display: flex;
     justify-content: flex-end;
   }
-
   .fle-co-sp {
     display: flex;
     flex-direction: column;
   }
-
   .fle-wr-sp {
     display: flex;
     flex-wrap: wrap-reverse;
   }
-
   .fle-r-sp {
     -webkit-box-pack: end;
     display: flex;
     justify-content: flex-end;
   }
-
   .fle-bl-sp {
     align-items: baseline;
   }
-
   .fle-1-sp {
     flex: 1;
   }
-
   .fle-2-sp {
     flex: 2;
   }
-
   .fle-3-sp {
     flex: 3;
   }
-
   .fle-4-sp {
     flex: 4;
   }
-
   .fle-5-sp {
     flex: 5;
   }
-
   .odr-1-sp {
     order: 1;
   }
-
   .odr-2-sp {
     order: 2;
   }
-
   .odr-3-sp {
     order: 3;
   }
-
   .odr-4-sp {
     order: 4;
   }
-
   .odr-5-sp {
     order: 5;
   }
-
   .odr-6-sp {
     order: 6;
   }
-
   .odr-7-sp {
     order: 7;
   }
-
   .odr-8-sp {
     order: 8;
   }
@@ -1674,102 +1608,80 @@ ul.center li {
   .fle-f-pc {
     display: flex;
   }
-
   .flex-pc {
     display: flex;
   }
-
   .fle-r-pc {
     -webkit-box-pack: end;
     display: flex;
     justify-content: flex-end;
   }
-
   .fle-b-pc {
     -webkit-box-pack: justify;
     display: flex;
     justify-content: space-between;
   }
-
   .fle-r-pc {
     -webkit-box-pack: end;
     display: flex;
     justify-content: flex-end;
   }
-
   .fle-c-pc {
     -webkit-box-pack: center;
     display: flex;
     justify-content: center;
   }
-
   .fle-co-pc {
     display: flex;
     flex-direction: column;
   }
-
   .fle-a-pc {
     display: flex;
     justify-content: space-around;
   }
-
   .fle-w-pc {
     display: flex;
     flex-wrap: wrap;
   }
-
   .fle-bl-pc {
     align-items: baseline;
   }
-
   .fle-1-pc {
     flex: 1;
   }
-
   .fle-2-pc {
     flex: 2;
   }
-
   .fle-3-pc {
     flex: 3;
   }
-
   .fle-4-pc {
     flex: 4;
   }
-
   .fle-5-pc {
     flex: 5;
   }
-
   .odr-1-pc {
     order: 1;
   }
-
   .odr-2-pc {
     order: 2;
   }
-
   .odr-3-pc {
     order: 3;
   }
-
   .odr-4-pc {
     order: 4;
   }
-
   .odr-5-pc {
     order: 5;
   }
-
   .odr-6-pc {
     order: 6;
   }
-
   .odr-7-pc {
     order: 7;
   }
-
   .odr-8-pc {
     order: 8;
   }
@@ -1899,13 +1811,11 @@ ul.center li {
     position: relative;
     width: 100%;
   }
-
   .iframe-11-sp {
     padding: 100% 0 0 0;
     position: relative;
     width: 100%;
   }
-
   .iframe-11-sp iframe {
     height: 100% !important;
     left: 0;
@@ -1913,43 +1823,36 @@ ul.center li {
     top: 0;
     width: 100% !important;
   }
-
   .iframe-916-sp {
     padding-top: 177.7777777778%;
     position: relative;
     width: 100%;
   }
-
   .iframe-34-sp {
     padding-top: 133.3333333333%;
     position: relative;
     width: 100%;
   }
-
   .iframe-21-sp {
     padding-top: 50%;
     position: relative;
     width: 100%;
   }
-
   .iframe-43-sp {
     padding: 75% 0 0 0;
     position: relative;
     width: 100%;
   }
-
   .iframe-351-sp {
     padding-top: 28.5714285714%;
     position: relative;
     width: 100%;
   }
-
   .iframe-31-sp {
     padding-top: 33.3333333333%;
     position: relative;
     width: 100%;
   }
-
   .iframe-191-sp {
     padding: 52.3437% 0 0 0;
     position: relative;
@@ -1976,7 +1879,6 @@ ul.center li {
     position: relative;
     width: 100%;
   }
-
   .iframe-169-pc iframe {
     height: 100% !important;
     left: 0;
@@ -1984,43 +1886,36 @@ ul.center li {
     top: 0;
     width: 100% !important;
   }
-
   .iframe-191-pc {
     padding: 52.3437% 0 0 0;
     position: relative;
     width: 100%;
   }
-
   .iframe-916-pc {
     padding-top: 177.7777777778%;
     position: relative;
     width: 100%;
   }
-
   .iframe-34-pc {
     padding-top: 133.3333333333%;
     position: relative;
     width: 100%;
   }
-
   .iframe-21-pc {
     padding-top: 50%;
     position: relative;
     width: 100%;
   }
-
   .iframe-43-pc {
     padding: 75% 0 0 0;
     position: relative;
     width: 100%;
   }
-
   .iframe-351-pc {
     padding-top: 28.5714285714%;
     position: relative;
     width: 100%;
   }
-
   .iframe-31-pc {
     padding-top: 33.3333333333%;
     position: relative;
